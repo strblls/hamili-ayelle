@@ -162,10 +162,12 @@ main#app{
   transform: translateX(0);
 }
 .page.enter{
-  animation: pageIn 550ms cubic-bezier(.2,.8,.2,1) forwards;
+  z-index: 2;
+  animation: pageIn 500ms cubic-bezier(.2,.8,.2,1) forwards;
 }
 .page.leave{
-  animation: pageOut 400ms cubic-bezier(.4,0,1,1) forwards;
+  z-index: 1;
+  animation: pageOut 500ms cubic-bezier(.4,0,1,1) forwards;
 }
 @keyframes pageIn{
   from{ opacity: 0; transform: translateX(50px); }

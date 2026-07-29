@@ -21,19 +21,25 @@ function goToPage(index){
   const current = pages[currentIndex];
   const next = pages[index];
 
+  // Immediately make next page active and animate in
+  next.classList.remove("leave");
+  next.classList.add("active", "enter");
+
+  // Animate current page out
   current.classList.remove("enter");
   current.classList.add("leave");
 
+  currentIndex = index;
+
   setTimeout(() => {
     current.classList.remove("active", "leave");
-    next.classList.add("active", "enter");
-    currentIndex = index;
+    next.classList.remove("enter");
     isTransitioning = false;
 
     if (index === pages.length - 1){
       startFinalSequence();
     }
-  }, 380);
+  }, 480);
 }
 
 document.querySelectorAll("[data-next]").forEach(btn=>{
