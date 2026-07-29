@@ -1,14 +1,11 @@
-// ============================================================
-// CONFIG — edit this message to whatever you want to say 💌
-// ============================================================
 const FINAL_MESSAGE =
   "Okay, serious na.\n\n" +
   "Hi, my love. It's the 30th na! And within those 30 days of knowing and getting to share little moments with you made life feel a little less heavier." +
-  "I cannot physically send a letter for you, so one thing I know best is to gawa something like this...\n\n" +
+  "\n\nI cannot physically send a letter for you, so one thing I know best is to gawa something like this...\n\n" +
   "I love you so much. And to be quite frank, I love you too much that I cannot explain how those three words cannot fully define how I feel for you." +
-  "You're someone I badly want to cherish, someone to make fun memories with, and someone I want to grow old with." +
-  "I hope that this first milestone of ours would be a memory that you will always keep in your heart." +
-  "Thank you for everything, my love. I love you so much.";
+  "\n\nYou're someone I badly want to cherish, someone to make fun memories with, and someone I want to grow old with." +
+  "\n\nI hope that this first milestone of ours would be a memory that you will always keep in your heart." +
+  "\n\nThank you for everything, my love. I love you so much.";
 
 // ============================================================
 // PAGE NAVIGATION
@@ -134,7 +131,7 @@ function fadeInMusic() {
   if (musicStarted) return;
   musicStarted = true;
   music.volume = 0;
-  music.play().catch(() => { /* file may be missing until user adds music.mp3 */ });
+  music.play().catch(() => { });
   let vol = 0;
   const fade = setInterval(() => {
     vol += 0.04;
