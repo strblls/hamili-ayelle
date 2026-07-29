@@ -12,10 +12,12 @@ const FINAL_MESSAGE =
 // ============================================================
 const pages = Array.from(document.querySelectorAll(".page"));
 let currentIndex = 0;
+let isTransitioning = false;
 
 function goToPage(index){
-  if (index === currentIndex || index < 0 || index >= pages.length) return;
+  if (isTransitioning || index === currentIndex || index < 0 || index >= pages.length) return;
 
+  isTransitioning = true;
   const current = pages[currentIndex];
   const next = pages[index];
 
@@ -26,6 +28,7 @@ function goToPage(index){
     current.classList.remove("active", "leave");
     next.classList.add("active", "enter");
     currentIndex = index;
+    isTransitioning = false;
 
     if (index === pages.length - 1){
       startFinalSequence();

@@ -154,6 +154,7 @@ main#app{
   padding: 24px;
   opacity: 0;
   transform: translateX(40px);
+  overflow-y: auto;
 }
 .page.active{
   display: flex;
